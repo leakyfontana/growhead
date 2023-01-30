@@ -142,8 +142,33 @@ const Button4 = styled.button`
 
 const TickerContainer = styled.div`
   width: 100%;
+  height: 86px;
+  background-color: #3A3C3B;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+const LeftArrow = styled.button`
+  background-color: #050505;
+  height: 80px;
+  width: 15%;
+  clip-path: polygon(0 50%, 10% 100%, 10% 80%, 100% 80%, 95% 50%, 100% 20%, 10% 20%, 10% 0);
+`;
+
+const RightArrow = styled.button`
+  background-color: #050505;
+  height: 80px;
+  width: 15%;
+  clip-path: polygon(100% 50%, 90% 100%, 90% 80%, 0 80%, 5% 50%, 0 20%, 90% 20%, 90% 0);
+`;
+
+const Ticker = styled.div`
   height: 50px;
-  background-color: black;
+  width: 50%;
+  background-color: #050505;
+  clip-path: polygon(5% 0, 0 50%, 5% 100%, 95% 100%, 100% 50%, 95% 0);
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -159,7 +184,11 @@ const IndexPage: React.FC<PageProps> = () => {
             <Button4>ABOUT</Button4>
           </ButtonBar>
         </FlexRow>
-        <TickerContainer />
+        <TickerContainer>
+          <LeftArrow />
+          <Ticker />
+          <RightArrow />
+        </TickerContainer>
       </Wrapper>
     </main>
   );
